@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <h1>Adicione um pet</h1>
+
+        <div if (data.errosValidacao)>
+            <div class="alert alert-danger" for (erro in data.errosValidacao)>
+                ${erro.param} - ${erro.msg}
+            </div>
+        </div>
+        
+        <form action="/pets/form" method="post">
+
+            <div if(data.pet.id)>
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" id="id" name="id" value="${data.pet.id}" />
+            </div>
+
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" value="${data.pet.nome}" placeholder="nome do pet" />
+            </div>
+            <div>
+                <label for="especie">Espécie:</label>
+                <input type="text" id="especie" name="especie" value="${data.pet.especie}" placeholder="espécie do pet" />
+            </div>
+            <div>
+                <label for="idade">Idade:</label>
+                <input type="text" id="idade" name="especie" value="${data.pet.idade}" placeholder="idade do pet" />
+            </div>
+            <div>
+                <label for="tamanho">Tamanho:</label>
+                <input type="text" id="tamanho" name="tamanho" value="${data.pet.tamanho}" placeholder="tamanho do pet" />
+            </div>
+
+            <input type="submit" value="Salvar" />
+        </form>
+    </body>
+</html>

@@ -54,7 +54,7 @@ function render(input, out, __component, component, state) {
     marko_escapeXmlAttr(data.pet.nome) +
     "\" placeholder=\"nome do pet\"></div><div><label for=\"especie\">Espécie:</label><input type=\"text\" id=\"especie\" name=\"especie\" value=\"" +
     marko_escapeXmlAttr(data.pet.especie) +
-    "\" placeholder=\"espécie do pet\"></div><div><label for=\"idade\">Idade:</label><input type=\"text\" id=\"idade\" name=\"especie\" value=\"" +
+    "\" placeholder=\"espécie do pet\"></div><div><label for=\"idade\">Idade:</label><input type=\"text\" id=\"idade\" name=\"idade\" value=\"" +
     marko_escapeXmlAttr(data.pet.idade) +
     "\" placeholder=\"idade do pet\"></div><div><label for=\"tamanho\">Tamanho:</label><input type=\"text\" id=\"tamanho\" name=\"tamanho\" value=\"" +
     marko_escapeXmlAttr(data.pet.tamanho) +

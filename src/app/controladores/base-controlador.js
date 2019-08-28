@@ -1,4 +1,4 @@
-const LivroControlador = require('./pet-controlador');
+const PetControlador = require('./pet-controlador');
 
 const templates = require('../views/templates');
 

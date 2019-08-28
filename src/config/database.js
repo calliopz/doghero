@@ -37,7 +37,7 @@ INSERT INTO pets (
     especie,
     idade,
     tamanho
-) SELECT 'Lua', 'Cachorro', '5 anos', 'Pequeno'
+) SELECT 'Lua', 'Cachorro', '5 anos', 'Pequeno' WHERE NOT EXISTS (SELECT * FROM pets WHERE nome = 'Lua')
 `;
 
 const INSERIR_PET_2 = 
@@ -47,7 +47,7 @@ INSERT INTO pets (
     especie,
     idade,
     tamanho
-) SELECT 'Max', 'Cachorro', '9 anos', 'Médio'
+) SELECT 'Max', 'Cachorro', '9 anos', 'Médio' WHERE NOT EXISTS (SELECT * FROM pets WHERE nome = 'Max')
 `;
 
 const INSERIR_PET_3 = 
@@ -57,7 +57,7 @@ INSERT INTO pets (
     especie,
     idade,
     tamanho
-) SELECT 'Mingau', 'Gato', '12 anos', 'Pequeno'
+) SELECT 'Mingau', 'Gato', '12 anos', 'Pequeno' WHERE NOT EXISTS (SELECT * FROM pets WHERE nome = 'Mingau')
 `;
 
 bd.serialize(() => {

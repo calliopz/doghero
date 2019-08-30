@@ -35,13 +35,13 @@ class UsuarioControlador {
             const usuarioDao = new UsuarioDao(db);
     
             usuarioDao.buscaPorId(id)
-                .then(usuario => 
-                    resp.marko(
-                        templates.usuarios.form, 
+                    .then(usuario => 
+                        resp.marko(
+                            templates.usuarios.form, 
                             { usuario: usuario }
+                        )
                     )
-                )
-                .catch(erro => console.log(erro));
+                    .catch(erro => console.log(erro));
         };
     }
 

@@ -27,6 +27,7 @@ class PasseadorControlador {
         };
     }
 
+
     formularioVisualizacao() {
         return function(req, resp) {
             const id = req.params.id;

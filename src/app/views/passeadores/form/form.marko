@@ -30,11 +30,11 @@
                         </div>
                     </div>
                     
-                    <form action="/passeadores/form" class="passeador" method="get">
+                    <form action="/passeadores/form" class="passeador" method="post">
 
                         <div if(data.passeador.id)>
-                            <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" id="id" name="id" value="${data.passeador.id}" />
+                            <input type="text" name="id" value="PUT">
+                            <input type="text" id="id" name="id" value="${data.passeador.id}" />
                         </div>
 
                         <div>

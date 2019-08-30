@@ -7,7 +7,7 @@ module.exports = (app) => {
     const rotasPasseador = PasseadorControlador.rotas(); 
 
     app.get(rotasPasseador.lista, passeadorControlador.lista());
-
+    
     app.get(rotasPasseador.visualizacao, passeadorControlador.formularioVisualizacao());
 
 };

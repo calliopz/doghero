@@ -58,11 +58,11 @@ function render(input, out, __component, component, state) {
     marko_escapeXmlAttr(data.pet.idade) +
     "\"></div><div><label for=\"tamanho\">Tamanho:</label><input type=\"text\" id=\"tamanho\" name=\"tamanho\" value=\"" +
     marko_escapeXmlAttr(data.pet.tamanho) +
-    "\"></div><button type=\"login\" id=\"adiciona-button\" class=\"adiciona-button\" name=\"salvar\">Salvar</button></form></div><a href=\"/\">Voltar</a></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer><script src=\"/estatico/js/remove-pet.js\">\r\n        </script>");
+    "\"></div></form></div><a href=\"/\">Voltar</a></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer><script src=\"/estatico/js/remove-pet.js\">\r\n        </script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "55");
+  await_reorderer_tag({}, out, __component, "54");
 
   out.w("</body></html>");
 }

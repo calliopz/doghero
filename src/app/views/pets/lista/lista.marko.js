@@ -22,7 +22,7 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/1\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h3 clas=\"titulo\"> Meus pets <a href=\"/pets/form\"><img src=\"/estatico/img/add-button.png\" alt=\"adicionar pet\"></a></h3> <table id=\"pets\" class=\"table table-striped table-hover\"><thead class=\"thead-dark\"><tr><th>Nome</th><th>Espécie</th><th>Idade</th><th>Tamanho</th><th></th><th></th></tr></thead><tbody>");
+  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/$(usuario.id)\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h3 clas=\"titulo\"> Meus pets <a href=\"/pets/form\"><img src=\"/estatico/img/add-button.png\" alt=\"adicionar pet\"></a></h3> <table id=\"pets\" class=\"table table-striped table-hover\"><thead class=\"thead-dark\"><tr><th>Nome</th><th>Espécie</th><th>Idade</th><th>Tamanho</th><th></th><th></th></tr></thead><tbody>");
 
   var for__33 = 0;
 

@@ -42,10 +42,10 @@ function render(input, out, __component, component, state) {
     out.w("</div>");
   }
 
-  out.w("<form action=\"/passeadores/form\" class=\"passeador\" method=\"get\">");
+  out.w("<form action=\"/passeadores/form\" class=\"passeador\" method=\"post\">");
 
   if (data.passeador.id) {
-    out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
+    out.w("<div><input type=\"text\" name=\"id\" value=\"PUT\"><input type=\"text\" id=\"id\" name=\"id\" value=\"" +
       marko_escapeXmlAttr(data.passeador.id) +
       "\"></div>");
   }

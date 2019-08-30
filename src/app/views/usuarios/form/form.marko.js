@@ -22,7 +22,7 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/1\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h1 class=\"info-usuario\">Meus dados pessoais</h1>");
+  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/$(usuario.id)\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h1 class=\"info-usuario\">Meus dados pessoais</h1>");
 
   if (data.errosValidacao) {
     out.w("<div>");
@@ -42,17 +42,23 @@ function render(input, out, __component, component, state) {
     out.w("</div>");
   }
 
-  out.w("<form action=\"/usuarios/form\" class=\"cadastro\" method=\"post\"><div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
-    marko_escapeXmlAttr(data.usuario.nome_completo) +
-    "\"></div><div><label for=\"email\">E-mail:</label><input type=\"text\" id=\"email\" name=\"email\" value=\"" +
+  out.w("<form action=\"/usuarios/form\" class=\"cadastro\" method=\"post\">");
+
+  if (data.usuario.id) {
+    out.w("<div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
+      marko_escapeXmlAttr(data.usuario.nome_completo) +
+      "\"></div>");
+  }
+
+  out.w("<div><label for=\"email\">E-mail:</label><input type=\"text\" id=\"email\" name=\"email\" value=\"" +
     marko_escapeXmlAttr(data.usuario.email) +
-    "\"></div><div><label for=\"senha\">Senha:</label><input type=\"text\" id=\"senha\" name=\"senha\" value=\"" +
+    "\"></div><div><label for=\"senha\">Senha:</label><input type=\"password\" id=\"senha\" name=\"senha\" value=\"" +
     marko_escapeXmlAttr(data.usuario.senha) +
-    "\"></div><button type=\"login\" id=\"adiciona-button\" class=\"adiciona-button\" name=\"salvar\">Salvar</button></form><a href=\"/pets\">Voltar</a></div></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer><script src=\"/estatico/js/remove-pet.js\">\r\n        </script>");
+    "\"></div> </form><a href=\"/pets\">Voltar</a></div></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer><script src=\"/estatico/js/remove-pet.js\">\r\n        </script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "49");
+  await_reorderer_tag({}, out, __component, "48");
 
   out.w("</body></html>");
 }

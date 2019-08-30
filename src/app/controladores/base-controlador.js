@@ -1,4 +1,6 @@
 const PetControlador = require('./pet-controlador');
+const UsuarioControlador = require('./usuario-controlador');
+const PasseadorControlador = require('./passeador-controlador');
 
 const templates = require('../views/templates');
 

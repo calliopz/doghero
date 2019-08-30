@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 
 const templates = require('../app/views/templates');
 
-app.use('/estatico', express.static('scr/app/public'));
+app.use('/estatico', express.static('src/app/public'));
 
 app.use(bodyParser.urlencoded({
     extended: true

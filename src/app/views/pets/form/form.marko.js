@@ -18,19 +18,19 @@ var marko_template = module.exports = require("marko/src/html").t(__filename),
 function render(input, out, __component, component, state) {
   var data = input;
 
-  out.w("<html><body>");
+  out.w("<html><head><meta charset=\"utf-8\"><title>DogHero</title><link rel=\"icon\" href=\"/estatico/img/doghero-logo1.png\"><link rel=\"stylesheet\" href=\"/estatico/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"/estatico/css/fontawesome.min.css\"><link rel=\"stylesheet\" href=\"/estatico/css/doghero.css\"></head><body>");
 
   component_globals_tag({}, out);
 
-  out.w("<h1>Adicione um pet</h1>");
+  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/1\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h1 class=\"info-pet\">Informações do pet</h1>");
 
   if (data.errosValidacao) {
     out.w("<div>");
 
-    var for__4 = 0;
+    var for__22 = 0;
 
     marko_forEach(data.errosValidacao, function(erro) {
-      var keyscope__5 = "[" + ((for__4++) + "]");
+      var keyscope__23 = "[" + ((for__22++) + "]");
 
       out.w("<div class=\"alert alert-danger\">" +
         marko_escapeXml(erro.param) +
@@ -42,7 +42,7 @@ function render(input, out, __component, component, state) {
     out.w("</div>");
   }
 
-  out.w("<form action=\"/pets/form\" method=\"post\">");
+  out.w("<form action=\"/pets/form\" class=\"altera-pet\" method=\"post\">");
 
   if (data.pet.id) {
     out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
@@ -52,17 +52,17 @@ function render(input, out, __component, component, state) {
 
   out.w("<div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
     marko_escapeXmlAttr(data.pet.nome) +
-    "\" placeholder=\"nome do pet\"></div><div><label for=\"especie\">Espécie:</label><input type=\"text\" id=\"especie\" name=\"especie\" value=\"" +
+    "\"></div><div><label for=\"especie\">Espécie:</label><input type=\"text\" id=\"especie\" name=\"especie\" value=\"" +
     marko_escapeXmlAttr(data.pet.especie) +
-    "\" placeholder=\"espécie do pet\"></div><div><label for=\"idade\">Idade:</label><input type=\"text\" id=\"idade\" name=\"idade\" value=\"" +
+    "\"></div><div><label for=\"idade\">Idade:</label><input type=\"text\" id=\"idade\" name=\"idade\" value=\"" +
     marko_escapeXmlAttr(data.pet.idade) +
-    "\" placeholder=\"idade do pet\"></div><div><label for=\"tamanho\">Tamanho:</label><input type=\"text\" id=\"tamanho\" name=\"tamanho\" value=\"" +
+    "\"></div><div><label for=\"tamanho\">Tamanho:</label><input type=\"text\" id=\"tamanho\" name=\"tamanho\" value=\"" +
     marko_escapeXmlAttr(data.pet.tamanho) +
-    "\" placeholder=\"tamanho do pet\"></div><input type=\"submit\" value=\"Salvar\"></form>");
+    "\"></div><button type=\"login\" id=\"adiciona-button\" class=\"adiciona-button\" name=\"salvar\">Salvar</button></form></div><a href=\"/\">Voltar</a></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer><script src=\"/estatico/js/remove-pet.js\">\r\n        </script>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "24");
+  await_reorderer_tag({}, out, __component, "55");
 
   out.w("</body></html>");
 }

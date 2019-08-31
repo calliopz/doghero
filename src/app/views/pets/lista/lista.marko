@@ -8,15 +8,16 @@
         <link rel="stylesheet" href="/estatico/css/doghero.css" />
     </head>
     <body>
-        <header class="cabecalhoPrincipal">
+         <header class="cabecalhoPrincipal">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-4">
                         <h1 class="logo-header"><img src="/estatico/img/logo-branco.png" alt="Logo Doghero" /></h1>
                     </div>
                     <div class="cabecalhoPrincipal-navegacao col-8">
-                        <a href="/usuarios/form/1" class="meu-cadastro"><img src="/estatico/img/avatar-white.png" alt="avatar"/></a>                            
-                    </div>
+                         <a href="/usuarios/form/${usuario.id}" class="meu-cadastro">
+                         <img src="/estatico/img/avatar-white.png" alt="avatar"/></a>
+                    </div> 
                 </div>
             </div>
         </header>
@@ -93,7 +94,7 @@
                             <td>Concluído</td>      
                        </tr>
                     </tbody>
-                </table>
+                </table>               
 
             </div>
         </main>

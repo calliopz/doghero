@@ -22,45 +22,31 @@ function render(input, out, __component, component, state) {
 
   component_globals_tag({}, out);
 
-  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/1\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h1 class=\"info-pet\">Meus dados pessoais</h1>");
+  out.w("<header class=\"cabecalhoPrincipal\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><h1 class=\"logo-header\"><img src=\"/estatico/img/logo-branco.png\" alt=\"Logo Doghero\"></h1></div><div class=\"cabecalhoPrincipal-navegacao col-8\"><a href=\"/usuarios/form/1\" class=\"meu-cadastro\"><img src=\"/estatico/img/avatar-white.png\" alt=\"avatar\"></a> </div></div></div></header><main class=\"conteudoPrincipal\"><div class=\"container\"><h3 clas=\"titulo\"> Meus passeadores <a href=\"/passeadores/form\"><img src=\"/estatico/img/add-button.png\" alt=\"adicionar pet\"></a></h3> <table id=\"passeadores\" class=\"table table-striped table-hover\"><thead class=\"thead-dark\"><tr><th>Nome</th><th>E-mail</th><th>Celular</th> <th></th></tr></thead><tbody>");
 
-  if (data.errosValidacao) {
-    out.w("<div>");
+  var for__31 = 0;
 
-    var for__22 = 0;
+  marko_forEach(data.passeadores, function(passeador) {
+    var keyscope__32 = "[" + ((for__31++) + "]");
 
-    marko_forEach(data.errosValidacao, function(erro) {
-      var keyscope__23 = "[" + ((for__22++) + "]");
+    out.w("<tr id=\"passeador_" +
+      marko_escapeXmlAttr(passeador.id) +
+      "\"><td>" +
+      marko_escapeXml(passeador.nome_completo) +
+      "</td><td>" +
+      marko_escapeXml(passeador.email) +
+      "</td><td>" +
+      marko_escapeXml(passeador.celular) +
+      "</td> <td><a href=\"/passeadores/form/" +
+      marko_escapeXmlAttr(passeador.id) +
+      "\">Visualizar</a></td> </tr>");
+  });
 
-      out.w("<div class=\"alert alert-danger\">" +
-        marko_escapeXml(erro.param) +
-        " - " +
-        marko_escapeXml(erro.msg) +
-        "</div>");
-    });
-
-    out.w("</div>");
-  }
-
-  out.w("<form action=\"/passeadores/form\" class=\"passeador\" method=\"put\">");
-
-  if (data.passeador.id) {
-    out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
-      marko_escapeXmlAttr(data.passeador.id) +
-      "\"></div>");
-  }
-
-  out.w("<div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
-    marko_escapeXmlAttr(data.passeador.nome_completo) +
-    "\"></div><div><label for=\"email\">E-mail:</label><input type=\"text\" id=\"email\" name=\"email\" value=\"" +
-    marko_escapeXmlAttr(data.passeador.email) +
-    "\"></div><div><label for=\"celular\">Celular:</label><input type=\"text\" id=\"celular\" name=\"celular\" value=\"" +
-    marko_escapeXmlAttr(data.passeador.celular) +
-    "\"></div> </form></div></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer>");
+  out.w("</tbody></table></div></main><footer class=\"rodape\"><div class=\"container\"><div class=\"row align-items-center\"><div class=\"col-4\"><img src=\"/estatico/img/logo.png\" class=\"logo-rodape\"></div><div class=\"col-8\"><ul class=\"redesSociais\"><li><a href=\"http://www.facebook.com/dogherobrasil\" class=\"compartilhar-facebook\" target=\"_blank\">/DogHero</a></li><li><a href=\"http://www.twitter.com/dogherobrasil\" class=\"compartilhar-twitter\" target=\"_blank\">@doghero</a></li></ul></div></div></div></footer>");
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "49");
+  await_reorderer_tag({}, out, __component, "50");
 
   out.w("</body></html>");
 }

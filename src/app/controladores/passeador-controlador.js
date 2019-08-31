@@ -7,8 +7,8 @@ class PasseadorControlador {
 
     static rotas() {
         return {
-            visualizacao: '/passeadores/form/:id',
-            lista: '/passeadores/lista'
+            lista: '/passeadores/lista',
+            visualizacao: '/passeadores/form/:id'            
         };
     }
 

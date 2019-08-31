@@ -9,8 +9,8 @@ class UsuarioControlador {
 
     static rotas() {
         return {
-            edicao: '/usuarios/form/:id',
-            lista: '/usuarios/lista'
+            lista: '/usuarios',
+            edicao: '/usuarios/form/:id'
         };
     }
 

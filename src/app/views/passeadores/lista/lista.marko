@@ -22,34 +22,26 @@
         </header>
         <main class="conteudoPrincipal">
             <div class="container">
-                <h1 class="info-pet">Meus dados pessoais</h1>
-
-                    <div if (data.errosValidacao)>
-                        <div class="alert alert-danger" for (erro in data.errosValidacao)>
-                            ${erro.param} - ${erro.msg}
-                        </div>
-                    </div>
-                    
-                    <form action="/passeadores/form" class="passeador" method="put">
-
-                        <div if(data.passeador.id)>
-                            <input type="hidden" name="_method" value="PUT">
-                            <input type="hidden" id="id" name="id" value="${data.passeador.id}" />
-                        </div>
-
-                        <div>
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" value="${data.passeador.nome_completo}" />
-                        </div>
-                        <div>
-                            <label for="email">E-mail:</label>
-                            <input type="text" id="email" name="email" value="${data.passeador.email}" />
-                        </div>
-                        <div>
-                            <label for="celular">Celular:</label>
-                            <input type="text" id="celular" name="celular" value="${data.passeador.celular}" />
-                        </div>                          
-                    </form>
+                      
+                <h3 clas="titulo"> Meus passeadores <a href="/passeadores/form"><img src="/estatico/img/add-button.png" alt="adicionar pet"/></a></h3>               
+                <table id="passeadores" class="table table-striped table-hover">
+                <thead class="thead-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Celular</th>                            
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="passeador_${passeador.id}" for (passeador in data.passeadores)>
+                            <td>${passeador.nome_completo}</td>
+                            <td>${passeador.email}</td>
+                            <td>${passeador.celular}</td>                            
+                            <td><a href="/passeadores/form/${passeador.id}">Visualizar</a></td>                            
+                       </tr>
+                    </tbody>
+                </table>
             </div>
         </main>
         <footer class="rodape">

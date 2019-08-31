@@ -45,12 +45,14 @@ function render(input, out, __component, component, state) {
   out.w("<form action=\"/usuarios/form\" class=\"cadastro\" method=\"post\">");
 
   if (data.usuario.id) {
-    out.w("<div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
-      marko_escapeXmlAttr(data.usuario.nome_completo) +
-      "\"></div>");
+    out.w("<div><input type=\"hidden\" name=\"_method\" value=\"PUT\"><input type=\"hidden\" id=\"id\" name=\"id\" value=\"" +
+      marko_escapeXmlAttr(data.usuario.id) +
+      "\"> </div>");
   }
 
-  out.w("<div><label for=\"email\">E-mail:</label><input type=\"text\" id=\"email\" name=\"email\" value=\"" +
+  out.w("<div><label for=\"nome\">Nome:</label><input type=\"text\" id=\"nome\" name=\"nome\" value=\"" +
+    marko_escapeXmlAttr(data.usuario.nome_completo) +
+    "\"></div><div><label for=\"email\">E-mail:</label><input type=\"text\" id=\"email\" name=\"email\" value=\"" +
     marko_escapeXmlAttr(data.usuario.email) +
     "\"></div><div><label for=\"senha\">Senha:</label><input type=\"password\" id=\"senha\" name=\"senha\" value=\"" +
     marko_escapeXmlAttr(data.usuario.senha) +
@@ -58,7 +60,7 @@ function render(input, out, __component, component, state) {
 
   init_components_tag({}, out);
 
-  await_reorderer_tag({}, out, __component, "48");
+  await_reorderer_tag({}, out, __component, "51");
 
   out.w("</body></html>");
 }

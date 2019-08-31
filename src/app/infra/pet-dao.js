@@ -42,6 +42,14 @@ class PetDao {
                     return resolve(resultados);
                 }
             )
+            this._db.all(
+                'SELECT * FROM usuarios',
+                (erro, resultados) => {
+                    if (erro) return reject('Não foi possível encontrar o seu cadastro!');
+         
+                    return resolve(resultados);
+                }
+            )
         });
     }
 

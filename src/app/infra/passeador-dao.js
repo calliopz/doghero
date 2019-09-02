@@ -9,7 +9,7 @@ class PasseadorDao {
             this._db.get(
                 `
                     SELECT *
-                    FROM passeadores
+                    FROM passeador
                     WHERE email = ?
                 `,
                 [email],
@@ -27,7 +27,7 @@ class PasseadorDao {
     lista() {
        return new Promise((resolve, reject) => {
             this._db.all(
-               'SELECT * FROM passeadores',
+               'SELECT * FROM passeador',
                (erro, resultados) => {
                     if (erro) return reject('Não foi possível exibir a lista de passeadores!');
 
@@ -43,7 +43,7 @@ class PasseadorDao {
             this._db.get(
                 `
                     SELECT *
-                    FROM passeadores
+                    FROM passeador
                     WHERE id = ?
                 `,
                 [id],

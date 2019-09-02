@@ -2,6 +2,8 @@ const { validationResult } = require('express-validator/check');
 
 const PetDao = require('../infra/pet-dao');
 const UsuarioDao = require('../infra/usuario-dao');
+const PasseadorDao = require('../infra/passeador-dao');
+const PasseioDao = require('../infra/passeio-dao');
 const db = require('../../config/database');
 
 const templates = require('../views/templates');
@@ -20,31 +22,30 @@ class PetControlador {
 
     lista() {
         return function(req, resp) {
-            
+
             const petDao = new PetDao(db);
-            petDao.lista()
-                    .then(pets => resp.marko(
-                        templates.pets.lista,
-                        {
-                            pets: pets
-
-                        }
-                    ))
-                    .catch(erro => console.log(erro));
-
             const usuarioDao = new UsuarioDao(db);
-            usuarioDao.lista()
-                    .then(usuarios => resp.marko(
-                        templates.usuarios.lista,
-                        {
-                            usuarios: usuarios
+            const passeadorDao = new PasseadorDao(db);
+            const passeioDao = new PasseioDao(db);
+            const petsPromise =  petDao.lista();
+            const usuariosPromise =  usuarioDao.lista();
+            const passeadoresPromise = passeadorDao.lista();
+            const passeiosPromise = passeioDao.lista();
 
-                        }
-                    ))
-                    .catch(erro => console.log(erro));
+            Promise.all([petsPromise,usuariosPromise, passeadoresPromise, passeiosPromise]).then((results)=>{
+                resp.marko(
+                    templates.pets.lista,
+                    {
+                        pets: results[0],
+                        usuarios: results[1],
+                        passeadores: results[2],
+                        passeios: results[3]
+                    }
+                )
+            }); 
+
         };
     }
-    
 
     formularioCadastro() {
         return function(req, resp) {

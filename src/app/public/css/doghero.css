@@ -6,11 +6,8 @@
     background-color: #ef3a5d;
 }
 
-.cabecalhoPrincipal .logo {
-    margin: 0;
-}
-
 .cabecalhoPrincipal-navegacao {
+    display: inline-block;
     text-align: right;
 }
 
@@ -169,12 +166,22 @@ h1 {
 }
 
 .cadastro {
-    width: 200px;
-    padding: 15px;
-    margin-left: 80px;       
+    margin-left: 5px;
+    color: white;       
 }
 
-.cadastro label {
-    color: #666;
-    display: block;
+.pets {
+    margin-left: 20px;
+    color: white;    
+}
+
+.passeador {
+    margin-left: 20px;
+    color: white; 
+}
+
+.passeio {
+    margin-left: 20px;
+    margin-right: 70px;
+    color: white; 
 }

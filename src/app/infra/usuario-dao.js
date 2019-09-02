@@ -69,6 +69,7 @@ class UsuarioDao {
                     WHERE id = ?
                 `,
                 [
+                    console.log("teste"),
                     usuario.nome_completo,
                     usuario.email,
                     usuario.senha,

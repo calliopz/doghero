@@ -1,5 +1,3 @@
-const { validationResult } = require('express-validator/check');
-
 const UsuarioDao = require('../infra/usuario-dao');
 const db = require('../../config/database');
 

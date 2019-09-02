@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
     data DATE NOT NULL,
     horario TIMESTAMP NOT NULL,
-    id_pet INTEGER ,
+    id_pet INTEGER,
     id_passeador INTEGER,
     FOREIGN KEY (id_pet) references pets(id),
     FOREIGN KEY (id_passeador) references passeador(id)    
@@ -108,7 +108,7 @@ INSERT INTO passeios (
     horario,
     id_pet,
     id_passeador
-) SELECT '2019-06-19', '06:45:00', 1, 1
+) SELECT '2019-06-19', '06:45', 1, 1 WHERE NOT EXISTS (SELECT * FROM passeios WHERE data = '2019-06-19' and horario = '06:45')
 `;
 
 const INSERIR_PASSEIO_2 = 
@@ -118,7 +118,7 @@ INSERT INTO passeios (
     horario,
     id_pet,
     id_passeador
-) SELECT '2019-06-24', '09:45', 1, 2
+) SELECT '2019-06-24', '09:45', 1, 2 WHERE NOT EXISTS (SELECT * FROM passeios WHERE data = '2019-06-24' and horario = '09:45')
 `;
 
 const INSERIR_PASSEIO_3 = 
@@ -128,7 +128,7 @@ INSERT INTO passeios (
     horario,
     id_pet,
     id_passeador
-) SELECT '2019-06-28', '15:30', 2, 1
+) SELECT '2019-06-28', '15:30', 2, 1 WHERE NOT EXISTS (SELECT * FROM passeios WHERE data = '2019-06-28' and horario = '15:30')
 `;
 
 

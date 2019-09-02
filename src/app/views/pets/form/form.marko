@@ -15,7 +15,15 @@
                         <h1 class="logo-header"><img src="/estatico/img/logo-branco.png" alt="Logo Doghero" /></h1>
                     </div>
                     <div class="cabecalhoPrincipal-navegacao col-8">
-                        <a href="/usuarios/form/1" class="meu-cadastro"><img src="/estatico/img/avatar-white.png" alt="avatar"/></a>                            
+                        <for|usuario, index| of=data.usuarios>
+                        <div id="usuario_${usuario.id}">
+                        <a href="/usuarios/form/${usuario.id}" class="cadastro">
+                        <img src="/estatico/img/man.png" alt="avatar"/></a>
+                        </div>    
+                        </for> 
+                        <a href="/pets" class="pets">Meus pets</a>  
+                        <a href="/passeadores/lista" class="passeador">Heróis</a>
+                        <a href="/passeios/lista" class="passeio">Passeios</a>          
                     </div>
                 </div>
             </div>
@@ -37,25 +45,26 @@
                             <input type="hidden" id="id" name="id" value="${data.pet.id}" />
                         </div>
 
-                        <div>
+                        <div class="form-group">
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" value="${data.pet.nome}" />
-                        </div>
-                        <div>
+                            <input type="text" id="nome" name="nome" value="${data.pet.nome}" placeholder="nome do pet" class="form-control" />
+                        </div>                            
+                        <div class="form-group">
                             <label for="especie">Espécie:</label>
-                            <input type="text" id="especie" name="especie" value="${data.pet.especie}" />
+                            <input type="text" id="especie" name="especie" value="${data.pet.especie}" placeholder="espécie do pet" class="form-control" />
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="idade">Idade:</label>
-                            <input type="text" id="idade" name="idade" value="${data.pet.idade}" />
+                            <input type="text" id="idade" name="idade" value="${data.pet.idade}" placeholder="idade do pet" class="form-control" />
                         </div>
-                        <div>
+                        <div class="form-group">
                             <label for="tamanho">Tamanho:</label>
-                            <input type="text" id="tamanho" name="tamanho" value="${data.pet.tamanho}" />
+                            <input type="text" id="tamanho" name="tamanho" value="${data.pet.tamanho}" placeholder="tamanho do pet" class="form-control"/>
                         </div>
+                        <button type="adiciona-pet" id="adiciona-button" class="adiciona-button" name="salvar">Salvar</button>
             </form>
             </div>
-            <a href="/">Voltar</a>
+            <a href="/pets">Voltar</a>
         </main>
         <footer class="rodape">
             <div class="container">

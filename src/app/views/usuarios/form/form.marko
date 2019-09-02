@@ -15,7 +15,15 @@
                         <h1 class="logo-header"><img src="/estatico/img/logo-branco.png" alt="Logo Doghero" /></h1>
                     </div>
                     <div class="cabecalhoPrincipal-navegacao col-8">
-                        <a href="/usuarios/form/$(usuario.id)" class="meu-cadastro"><img src="/estatico/img/avatar-white.png" alt="avatar"/></a>                            
+                        <for|usuario, index| of=data.usuarios>
+                        <div id="usuario_${usuario.id}">
+                        <a href="/usuarios/form/${usuario.id}" class="cadastro">
+                        <img src="/estatico/img/man.png" alt="avatar"/></a>
+                        </div>    
+                        </for> 
+                        <a href="/pets" class="pets">Meus pets</a>  
+                        <a href="/passeadores/lista" class="passeador">Heróis</a>
+                        <a href="/passeios/lista" class="passeio">Passeios</a>          
                     </div>
                 </div>
             </div>
@@ -38,16 +46,12 @@
                         </div>
                         <div>
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" value="${data.usuario.nome_completo}" />
+                            <input type="text" id="nome" name="nome" value="${data.usuario.nome_completo}" />                            
                         </div>
                         <div>
                             <label for="email">E-mail:</label>
                             <input type="text" id="email" name="email" value="${data.usuario.email}" />
-                        </div>
-                        <div>
-                            <label for="senha">Senha:</label>
-                            <input type="password" id="senha" name="senha" value="${data.usuario.senha}" />
-                        </div>                        
+                        </div>                                            
                     </form>
                 <a href="/pets">Voltar</a>
             </div>

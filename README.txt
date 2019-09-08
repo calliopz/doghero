@@ -4,7 +4,6 @@ npm install express@4.16.3 --save-exact
 npm install
 npm install -g nodemon@1.18.4 --save-exact
 npm install marko@4.18.11 --save-exact
-npm install sqlite3@4.0.2 --save-exact
 npm install body-parser@1.18.3 --save-exact
 npm install express-validator@5.3.1 --save-exact
 npm install method-override@3.0.0 --save-exact
